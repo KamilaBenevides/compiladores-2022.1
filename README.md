@@ -1,4 +1,4 @@
 # Compiladores
 
 Equipe: Elyssana, Kamila e Juliana
-Linguagem sorteada: Delphi
+- Linguagem sorteada: Delphi
