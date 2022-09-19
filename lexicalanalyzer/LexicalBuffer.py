@@ -4,10 +4,10 @@ __all__ = ['LexicalBuffer']
 
 
 class LexicalBuffer(object):
-  alphabet_pattern = re.compile(r'^[a-z\d]$')
-  word_pattern = re.compile(r'^[a-z\d]*$')
+  alphabet_pattern = re.compile(r'^[A-z\d]$')
+  word_pattern = re.compile(r'^[A-z\d]*$')
 
-  id_pattern = re.compile(r'^[a-z][a-z\d]*$')
+  id_pattern = re.compile(r'^[A-z][A-z\d]*$')
   delimiter_pattern = re.compile(r'^[:;,\.()+\-*/=><]$')
 
   white_space_pattern = re.compile(r'[ \n\t]')
@@ -19,7 +19,7 @@ class LexicalBuffer(object):
                     'boolean', 'procedure', 'function', 'read', 
                     'write', 'for', 'to', 'do', 'repeat', 'until', 
                     'while', 'if', 'then','else']
-  relationals = ['<', '>', '=', '<>', '<=', '>=']
+  relationals = ['<', '>', '=', '<>', '<=', '>=', 'in']
   operators = ['+', '-', '*', '/']
 
   def __init__(self, string : str=''):
