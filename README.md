@@ -1,4 +1,4 @@
 # Compiladores
 
-Equipe: Elyssana, Kamila e Juliana
+Equipe: Elyssana Oliveira, Juliana Melo e Kamila Benevides
 - Linguagem sorteada: Delphi
