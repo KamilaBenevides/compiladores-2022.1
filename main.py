@@ -10,11 +10,11 @@ if main_path[len(main_path) - 1] != '/':
   main_path += '/'
 
 
-def main(file_path=main_path+'simples.pas', output_early=True):
+def main(file_path=main_path+'teste.dpr', output_early=True):
   file = argv[1] if len(argv) > 1 else file_path
   with open(file, 'r') as file:
     tokens = Lexical(file).split()
-    print('Análise Léxica bem sucedida. A lista de tokens gerados está disponível no arquivo tokens.log')
+    print('Análise Léxica bem sucedida! A lista de tokens gerados está disponível no arquivo tokens.log')
     if output_early: generate_output(tokens)
   return tokens
 
