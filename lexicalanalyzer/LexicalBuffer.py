@@ -4,23 +4,22 @@ __all__ = ['LexicalBuffer']
 
 
 class LexicalBuffer(object):
-  alphabet_pattern = re.compile(r'^[A-z\d]$')
-  word_pattern = re.compile(r'^[A-z\d]*$')
-
-  id_pattern = re.compile(r'^[A-z][A-z\d]*$')
-  delimiter_pattern = re.compile(r'^[:;,\.()+\-*/=><]$')
-
-  white_space_pattern = re.compile(r'[ \n\t]')
-  compose_delimiter_pattern = re.compile(r'^[:<>]=$|^[=<]>$')
-
-  booleans_one = ['and', 'or']
-  booleans_two = ['not']
-  reserved_words = ['program', 'begin', 'end', 'var', 'integer', 
+  booleansTwo = ['and', 'or']
+  booleansOne = ['not']
+  reservedWords = ['program', 'begin', 'end', 'var', 'integer', 'array',
                     'boolean', 'procedure', 'function', 'read', 
                     'write', 'for', 'to', 'do', 'repeat', 'until', 
                     'while', 'if', 'then','else']
   relationals = ['<', '>', '=', '<>', '<=', '>=', 'in']
   operators = ['+', '-', '*', '/']
+
+  alphabetPattern = re.compile(r'^[A-z\d]$')
+  wordPattern = re.compile(r'^[A-z\d]*$')
+  idPattern = re.compile(r'^[A-z][A-z\d]*$')
+  delimiterPattern = re.compile(r'^[:;,\.()+\-*/=><]$')
+  whiteSpacePattern = re.compile(r'[ \n\t]')
+  composeDelimiterPattern = re.compile(r'^[:<>]=$|^[=<]>$')
+
 
   def __init__(self, string : str=''):
     self.__buffer = string
@@ -28,41 +27,41 @@ class LexicalBuffer(object):
   def clean(self) -> None:
     self.__buffer = ''
   
-  def is_word(self) -> bool:
-    return bool(self.word_pattern.match(self.__buffer))
+  def isWord(self) -> bool:
+    return bool(self.wordPattern.match(self.__buffer))
 
-  def is_number(self) -> bool:
+  def isNumber(self) -> bool:
     return bool(self.__buffer.isdigit())
 
-  def is_id(self) -> bool:
-    return bool(self.id_pattern.match(self.__buffer))
+  def isId(self) -> bool:
+    return bool(self.idPattern.match(self.__buffer))
 
-  def is_delimiter(self) -> bool:
-    return  bool(self.delimiter_pattern.match(self.__buffer))
+  def isDelimiter(self) -> bool:
+    return  bool(self.delimiterPattern.match(self.__buffer))
 
-  def is_compose_delimiter(self) -> bool:
-    return bool(self.compose_delimiter_pattern.match(self.__buffer))
+  def isComposeDelimiter(self) -> bool:
+    return bool(self.composeDelimiterPattern.match(self.__buffer))
 
-  def is_white_space(self) -> bool:
-    return bool(self.white_space_pattern.match(self.__buffer))
+  def isWhiteSpace(self) -> bool:
+    return bool(self.whiteSpacePattern.match(self.__buffer))
 
-  def is_boolean_one(self) -> bool:
-    return self.__buffer in self.booleans_one
+  def isBooleanOne(self) -> bool:
+    return self.__buffer in self.booleansTwo
 
-  def is_boolean_two(self) -> bool:
-    return self.__buffer in self.booleans_two
+  def isBooleanTwo(self) -> bool:
+    return self.__buffer in self.booleansOne
 
-  def is_reserved_word(self) -> bool:
-    return self.__buffer in self.reserved_words
+  def isReservedWord(self) -> bool:
+    return self.__buffer in self.reservedWords
 
-  def is_relational(self) -> bool:
+  def isRelational(self) -> bool:
     return self.__buffer in self.relationals
 
-  def is_operator(self) -> bool:
+  def isOperator(self) -> bool:
     return self.__buffer in self.operators
 
-  def is_valid(self) -> bool:
-    return bool(self.alphabet_pattern.match(self.__buffer))
+  def isValid(self) -> bool:
+    return bool(self.alphabetPattern.match(self.__buffer))
 
   def __str__(self):
     return self.__buffer[:]

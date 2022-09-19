@@ -14,7 +14,7 @@ def main(file_path=main_path+'teste.dpr', output_early=True):
   file = argv[1] if len(argv) > 1 else file_path
   with open(file, 'r') as file:
     tokens = Lexical(file).split()
-    print('Análise Léxica bem sucedida! A lista de tokens gerados está disponível no arquivo tokens.log')
+    print('Análise Léxica bem sucedida! A lista de tokens gerados está disponível no arquivo ListTokens.txt')
     if output_early: generate_output(tokens)
   return tokens
 
@@ -23,7 +23,7 @@ def generate_output(tokens):
 
 
 def print_tokens(tokens):
-  with open(main_path + 'tokens.log', 'w') as log:
+  with open(main_path + 'ListTokens.txt', 'w') as log:
     for i in tokens:
       log.write("[")
       count = 1

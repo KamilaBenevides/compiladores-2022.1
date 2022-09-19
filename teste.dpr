@@ -1,10 +1,9 @@
 program simples;
 	var entrada, count, pot : integer;
-			a, b : boolean;
+            c : array;
 
 begin
-    a := 1;
-    b := 1;
+    c[0] := 5;
     pot := 1;
     read(entrada);
 
