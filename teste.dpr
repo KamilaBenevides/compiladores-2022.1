@@ -1,9 +1,9 @@
 program simples;
 	var entrada, count, pot : integer;
-            c : array;
+            c : integer;
 
 begin
-    c[0] := 5;
+    c := 5;
     pot := 1;
     read(entrada);
 

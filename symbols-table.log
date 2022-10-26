@@ -1,0 +1,7 @@
+-----lexema----------token----------category---------scope------------type-----------value------
+      pot      |      id       |   variable    |    global     |    integer    |     None      
+     count     |      id       |   variable    |    global     |    integer    |     None      
+    entrada    |      id       |   variable    |    global     |    integer    |     None      
+       c       |      id       |   variable    |    global     |    integer    |     None      
+
+
